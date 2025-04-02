@@ -6,7 +6,7 @@
 /*   By: nhara <nhara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:09:33 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/01 18:47:34 by nhara            ###   ########.fr       */
+/*   Updated: 2025/04/02 14:06:19 by nhara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,12 +53,12 @@ int	main(int argc, char *argv[])
 		send_byte(server_pid, *argv[2]);
 		if (usleep(SERVER_RESPONSE_TIMEOUT) == 0)
 		{
-			ft_putstr_fd("pid error\n", STDERR_FILENO);
+			ft_putstr_fd("server error\n", STDERR_FILENO);
 			return (-1);
 		}
 		if (g_signal_status == SIG_ACK)
 			argv[2]++;
 	}
-	ft_putstr_fd("success!\n", STDOUT_FILENO);
+	ft_putstr_fd("success\n", STDOUT_FILENO);
 	return (0);
 }

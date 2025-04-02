@@ -6,13 +6,13 @@
 /*   By: nhara <nhara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 12:27:38 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/01 17:36:43 by nhara            ###   ########.fr       */
+/*   Updated: 2025/04/02 11:29:29 by nhara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-static t_receive_buffer g_recv_buffer; //受信データを保存するグローバル変数
+static t_receive_buffer	g_recv_buffer;
 
 static void	signal_handler(int signum, siginfo_t *info,
 		void *ucontext __attribute__((unused)))

@@ -6,7 +6,7 @@
 /*   By: nhara <nhara@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 12:30:25 by marvin            #+#    #+#             */
-/*   Updated: 2025/04/01 18:44:55 by nhara            ###   ########.fr       */
+/*   Updated: 2025/04/02 14:25:22 by nhara            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,10 @@ typedef enum e_signal_state
 
 typedef enum e_signal_timing
 {
-	BIT_RECEIVE_DELAY = 100,   // 1ビットを処理する時間（マイクロ秒）
-	SIG_RECEIVE_TIMEOUT = 210, // シグナルの最大待機時間（マイクロ秒）
-	BIT_SEND_INTERVAL = 200,   // 各ビットの送信間隔（マイクロ秒）
+	BIT_RECEIVE_DELAY = 100,
+	SIG_RECEIVE_TIMEOUT = 250,
+	BIT_SEND_INTERVAL = 200,
 	SERVER_RESPONSE_TIMEOUT = SIG_RECEIVE_TIMEOUT * 50
-	// クライアントのPID応答を待つ時間（マイクロ秒）
 }							t_signal_timing;
 
 #endif
