@@ -6,7 +6,7 @@
 #    By: nhara <nhara@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/28 14:12:00 by nhara             #+#    #+#              #
-#    Updated: 2025/04/02 14:24:06 by nhara            ###   ########.fr        #
+#    Updated: 2025/04/02 18:11:41 by nhara            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,15 +34,18 @@ $(LIBFT):
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -I. -c $< -o $@
 
-$(CLIENT): $(OBJ_CLIENT)
+$(CLIENT): $(OBJ_CLIENT) $(LIBFT)
 	$(CC) $(CFLAGS) -o $(CLIENT) $(OBJ_CLIENT) -L$(LIBFT_DIR) -lft
 
-$(SERVER): $(OBJ_SERVER)
+$(SERVER): $(OBJ_SERVER) $(LIBFT)
 	$(CC) $(CFLAGS) -o $(SERVER) $(OBJ_SERVER) -L$(LIBFT_DIR) -lft
+
+bonus : all
 
 clean:
 	make -C $(LIBFT_DIR) clean
 	rm -f $(OBJ_SERVER) $(OBJ_CLIENT)
+	
 fclean: clean
 	make -C $(LIBFT_DIR) fclean
 	rm -f $(SERVER) $(CLIENT)
